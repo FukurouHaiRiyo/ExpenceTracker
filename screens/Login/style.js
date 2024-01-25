@@ -7,12 +7,14 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     input: {
-      width: '80%',
+      width: 100,
+      alignItems: 'center',
       margin: 10,
       padding: 10,
       borderWidth: 1,
-      borderColor: '#ccc',
-      borderRadius: 5
+      borderColor: '#000',
+      borderRadius: 10,
+      borderWidth: 1
     }
 });
 

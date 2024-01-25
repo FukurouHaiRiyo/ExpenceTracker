@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {Text, TextInput, Button, View} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
+import Button from '../../components/Button';
 
 import styles from './styles';
 
@@ -44,10 +45,14 @@ const SignUp = ({navigation}) => {
                 style={styles.input} 
             />
 
-            <Button title='Sign Up' onPress={handleSignUp} />
-            <Text onPress={() => navigation.navigate('Login')}>
-                Already have and account? Login
+            <Button mode='contained' onPress={handleSignUp}>
+                Sign up
+            </Button>
+            <Text>
+                Already have and account?
             </Text>
+
+            <Button mode='outlined' onPress={() => navigation.navigate('Login')}>Login</Button>
         </View>
     )
 }
