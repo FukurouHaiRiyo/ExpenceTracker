@@ -1,24 +1,38 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput } from 'react-native';
-import {
-  GoogleSignin,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
 
 import styles from './style';
 import Background from '../../components/Background';
 import Logo from '../../components/Logo';
 import Button from '../../components/Button';
 
+import emailValidator from '../../useful/emailValidator';
+
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
+    // for testing purpose
+    if (emailValidator(email) == 'Email is not valid') {
+      alert(emailError);
+    }
+    if (password.length < 5) {
+      alert('Password must be at least 5 characters long');
+      return;
+    }
+
+    if (email == 'andreipanait00@gmail.com' && password == '123456'){
+      navigation.navigate('Home');
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Home' }],
+      });
+    }
   };
 
   const handleGoogleLogin = () => {
-    // GoogleSignin.configure({});
+
   }
 
   return (

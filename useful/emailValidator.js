@@ -5,3 +5,5 @@ const emailValidator = (email) => {
 
     return '';
 }
+
+export default emailValidator;
